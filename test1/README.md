@@ -4,7 +4,7 @@
 ### GitHub地址：[git传送门](https://github.com/WangHuagang)
 ### 我的博客地址：[博客传送门](http://blog.54whg.cn)
 - 博客中有关于git的基本命令操作哦 <b>[传送门](http://blog.54whg.cn/2018/03/17/gitLearn/)</b>
->>欢迎大家访问，有更好的建议和意见可以留言哦，或者在博客中在线联系我哦！
+>欢迎大家访问，有更好的建议和意见可以留言哦，或者在博客中在线联系我哦！
 
 ***
 ## ===以下为本次作业===
@@ -53,6 +53,7 @@ end
 ```
 
 <b>业务流程图如下：</b>
+
 ![业务流程图](ExamAndManger.png)
 
 <b>流程说明：</b>
@@ -109,6 +110,7 @@ end
 ```
 
 <b>业务流程图如下：</b>
+
 ![业务流程图](CustomerMaintenanceService.png)
 
 <b>流程说明：</b>
