@@ -19,79 +19,91 @@
 @startuml
 
 class 图书馆图书资源{
-    -String 书名
-    -String 类别
+    -String bookName
+    -String bookType
     -String ISBN
-    -float 价格
-    -String 简介
-    +Integer 馆藏数量
-    +Integer 可借数量
+    -float bookPrice
+    -String summary
+    +Integer CollectionNum
+    +Integer LoanNum
 }
 
 class 纸质图书  {
-    -String 图书编号 
-    -String 书名 
-    -String 作者
-    +Integer 馆藏数量 
-    -String 出版社
-    -String 出版日期
+    -String ISBN 
+    -String bookName 
+    -String author
+    +Integer CollectionNum 
+    -String bookPublisher
+    -String bookPublisherTime
 }
 class 电子图书{
-    -String 图书编号 
-    -String 书名 
-    -String 作者
-    +Integer 馆藏数量 
-    -String 出版社
-    -String 出版公司 
+    -String ISBN 
+    -String bookName 
+    -String author
+    +Integer CollectionNum 
+    -String bookPublisher
+    -String bookPublisherCompany 
     
 }
 
 class 系统管理员{
-    -String 工号
-    -String 姓名
-    -String 部门 
+    -String workNum
+    -String name
+    -String department 
 }
 class 图书管理员{
-    -String 职工号
-    -String 姓名
-    -String 部门 
+    -String workNum
+    -String name
+    -String department 
 }
 class 读者{
-    -String 姓名
-    -String 学号 
-    -String 一卡通号
-    -Integer 图书限额
-    -Integer 已借图书数
-    -Integer 超期图书数
-    -String 罚款记录  
+    -String readerName
+    -String readerId 
+    -String password
+    -Integer sex
+    -String IdentificationNumber
+    -datetime readerBorn
+    -String readerGrade  
+    -String readerMajor  
+    -String readerClass  
+    -String readerTel  
+    -String Remarks  
 }
 class 借书记录{
-    -String 借书人
-    -String 学号 
-    -Date 借书日期
-    -Date 应还日期
-    -Date 归还日期
+    -String borrowId
+    -String readerId 
+    -String bookId
+    -String Operator
+    -Date borrowTime
+    -Date returnTime
 }
 class 图书超期罚款记录 {
-    -String 超期时间 
-    -String 罚款图书馆 
-    -String 罚款原因 
-    -String 罚款人 
-    -float 罚款金额 
+    -String fineId 
+    -String readerId 
+    -String bookId 
+    -String fineTime 
+    -float fineMoney 
+    -String getFineTime 
+    -String Operator 
+    -String Remarks 
 }
 
-class 图书预约记录{
-    -String 预定书名 
-    -Integer 预定本数 
-    -Date 预定日期
+class 图书续借记录{
+    -String renewId 
+    -String readerId
+    -String bookId 
+    -String renewTime 
+    -String Operator 
+    -String Operator 
+
 }
 
 
 读者--借书记录
-图书馆图书资源 "1"--"N"图书预约记录:预定
+图书馆图书资源 "1"--"N"图书续借记录:续借
 电子图书  --|> 图书馆图书资源:类别 
 纸质图书 --|> 图书馆图书资源:类别 
-图书预约记录"N"--"1"读者
+图书续借记录"N"--"1"读者
 读者"N"--"1"系统管理员:管理 
 借书记录"N"--"1" 图书管理员:记录 
 借书记录"1"--"0..1"图书超期罚款记录
@@ -104,7 +116,7 @@ class 图书预约记录{
 ```
 
 #### 1.2 类图如下：
-![](libClass.png)
+![](libClass2.png)
 
 #### 1.3 类图说明：
 类图包括以下实体：
