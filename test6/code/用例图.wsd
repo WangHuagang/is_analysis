@@ -1,0 +1,28 @@
+@startuml
+title 用例图
+actor teachers
+actor students
+actor users
+users <|-- teachers
+users <|-- students
+
+teachers ---> (发布实验)
+teachers ---> (修改实验)
+teachers ---> (评定不同课程成绩)
+teachers ---> (查看实验)
+teachers ---> (查看所有学生成绩)
+teachers ---> (修改学生成绩)
+teachers ---> (学生列表)
+students ---> (学生列表)
+students ---> (查看对应课程成绩)
+students ---> (查看实验)
+students ---> (设置github地址)
+
+users --up-> (登录)
+users --up-> (登出)
+users --up-> (查看用户信息)
+users --up-> (修改用户信息)
+users --up-> (修改密码)
+users --up-> (选择课程)
+users --up-> (选择上课学期)
+@enduml

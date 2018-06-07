@@ -1,0 +1,11 @@
+@startuml
+title 查看实验用例的顺序图
+actor users
+users -> students: 查看所有上课课程的实验
+alt users是老师或者学生
+        students -> course
+	course-> tests
+	tests -> scoreItem
+	scoreItem --> users:相应课程的实验的内容
+end
+@enduml

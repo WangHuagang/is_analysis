@@ -1,0 +1,8 @@
+@startuml
+title 设置github地址用例的顺序图
+actor users
+users -> students: 设置github地址
+alt users是学生
+        students -> students
+end
+@enduml

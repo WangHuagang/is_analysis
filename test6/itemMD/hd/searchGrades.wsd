@@ -1,0 +1,8 @@
+@startuml
+title 查看成绩用例的顺序图
+actor students
+students -> course: 查看成绩和评语
+course-> grades
+grades -> tests
+tests --> students:每个实验的信息、详细成绩和评价
+@enduml

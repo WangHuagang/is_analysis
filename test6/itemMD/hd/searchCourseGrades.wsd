@@ -1,0 +1,9 @@
+@startuml
+title 查看课程成绩用例的顺序图
+actor users
+users -> students: 查看课程的实验的成绩
+alt users是学生
+        students -> course
+	course-> tests
+end
+@enduml
